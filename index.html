@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zyreen · Portfolio</title>
+  <meta name="description" content="Portfolio of Zyreen — developer projects and contact." />
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/210473525?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #78716c;
+      --border: #e7e5e4; --accent: #7c3aed; --accent-soft: #ede9fe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
+        --border: #292524; --accent: #a78bfa; --accent-soft: #2e1065;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, sans-serif; background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    nav .logo { font-weight: 700; text-decoration: none; }
+    nav ul { display: flex; gap: 20px; list-style: none; }
+    nav ul a { text-decoration: none; color: var(--muted); font-size: 15px; }
+    nav ul a:hover { color: var(--text); }
+
+    .hero { padding: 72px 0 56px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+    .hero img { width: 112px; height: 112px; border-radius: 50%; border: 3px solid var(--accent-soft); }
+    .hero h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; letter-spacing: -0.02em; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { color: var(--muted); margin-top: 10px; max-width: 520px; font-size: 17px; }
+    .btns { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none;
+      font-weight: 500; font-size: 15px; border: 1px solid var(--border);
+    }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn:hover { opacity: .88; }
+
+    section { padding: 48px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 22px; margin-bottom: 20px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skills span {
+      background: var(--accent-soft); color: var(--accent); padding: 6px 12px;
+      border-radius: 999px; font-size: 14px; font-weight: 500;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px; text-decoration: none; display: flex; flex-direction: column; gap: 8px;
+      transition: transform .15s, border-color .15s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .card h3 { font-size: 17px; word-break: break-word; }
+    .card p { color: var(--muted); font-size: 14px; flex: 1; }
+    .meta { display: flex; gap: 14px; font-size: 13px; color: var(--muted); align-items: center; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+    .status { color: var(--muted); }
+
+    footer { padding: 40px 0; color: var(--muted); font-size: 14px; text-align: center; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Zyreen</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <img src="https://avatars.githubusercontent.com/u/210473525?v=4" alt="Zyreen's avatar" />
+      <div>
+        <h1>Hi, I'm <span>Zyreen</span> 👋</h1>
+        <p>A developer who enjoys building clean, useful web apps with JavaScript and TypeScript.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="https://github.com/Zyreen-uni" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p style="color:var(--muted);margin-bottom:20px">
+        I like turning ideas into working websites — from small business pages to interactive apps.
+        I'm always learning and looking for new things to build.
+      </p>
+      <div class="skills">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span>
+        <span>React</span><span>Git &amp; GitHub</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid" id="repos"><p class="status">Loading projects…</p></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p style="color:var(--muted);margin-bottom:16px">Want to work together or just say hi? Reach out!</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:castillomzyreenmae@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/Zyreen-uni" target="_blank" rel="noopener">@Zyreen-uni</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>© <span id="year"></span> Zyreen · Built with HTML &amp; CSS</footer>
+
+  <script>
+    const USER = "Zyreen-uni";
+    const HIDE = [`${USER}.github.io`.toLowerCase()];
+    const COLORS = { JavaScript: "#f1e05a", TypeScript: "#3178c6", HTML: "#e34c26", CSS: "#563d7c", Python: "#3572A5" };
+    // Shown if the GitHub API is unreachable (e.g. rate-limited)
+    const FALLBACK = [
+      { name: "santos-bh", description: null, language: "TypeScript", html_url: `https://github.com/${USER}/santos-bh`, stargazers_count: 0, homepage: "" },
+      { name: "delectables25", description: null, language: "JavaScript", html_url: `https://github.com/${USER}/delectables25`, stargazers_count: 0, homepage: "" },
+    ];
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const pretty = n => n.replace(/[-_]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+    function render(repos) {
+      const list = repos.filter(r => !r.fork && !HIDE.includes(r.name.toLowerCase()));
+      const el = document.getElementById("repos");
+      if (!list.length) { el.innerHTML = '<p class="status">No public projects yet.</p>'; return; }
+      el.innerHTML = list.map(r => `
+        <a class="card" href="${esc(r.homepage || r.html_url)}" target="_blank" rel="noopener">
+          <h3>${esc(pretty(r.name))}</h3>
+          <p>${esc(r.description || "A project by " + USER + ".")}</p>
+          <div class="meta">
+            ${r.language ? `<span><i class="dot" style="background:${COLORS[r.language] || "#888"}"></i>${esc(r.language)}</span>` : ""}
+            ${r.stargazers_count ? `<span>★ ${r.stargazers_count}</span>` : ""}
+          </div>
+        </a>`).join("");
+    }
+
+    fetch(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`)
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(render)
+      .catch(() => render(FALLBACK));
+  </script>
+</body>
+</html>
